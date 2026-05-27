@@ -1,0 +1,11 @@
+@AuctionService_HostAddress = http://localhost:5091
+
+GET {{AuctionService_HostAddress}}/openapi/v1.json
+Accept: application/json
+
+###
+
+GET {{AuctionService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
