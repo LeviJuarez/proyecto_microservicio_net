@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using MongoDB.Entities;
 
 namespace SearchService;
@@ -13,7 +14,7 @@ public class AuctionSvcHttpClient
         _config = config;
     }
 
-    public async Task<string> GetItemsForSearchDb()
+    public async Task<List<Item>> GetItemsForSearchDb()
     {
         var lastUpdated = await DB.Default.Find<Item, string>()
             .Sort(x => x.Descending(x => x.UpdatedAt))
